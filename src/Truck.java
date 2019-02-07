@@ -18,9 +18,15 @@ public class Truck extends Car {
         System.out.println ("Nazwa samochodu " + getName () + " Pojemność baku " + getTankCapacity () + " Spałanie na 100 km " + getAverageBurn () + " Waga ładunku wynosi " + getWeightOfLoad ());
     }
 
-    @Override
-    double calculate() {
-        double avarageWithCondition = (1.6 * getAverageBurn ());
-        return avarageWithCondition;
+
+    double calculateRange() {
+        double range = 0;
+        if (condIsOn) {
+            range = (100 / (getAverageBurn () + 1.6) * getTankCapacity ()) + (weightOfLoad / 100 * 0.5);
+        } else {
+            range = (100 / getAverageBurn () * getTankCapacity ()) + (weightOfLoad / 100 * 0.5);
+
+        }
+        return range;
     }
 }

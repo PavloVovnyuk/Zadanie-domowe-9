@@ -1,5 +1,5 @@
 public class Vehicle {
-    private  String name;
+    private String name;
     private double tankCapacity;
     private double averageBurn;
 
